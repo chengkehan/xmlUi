@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lib allowDomain="*">
+	<!-- Normal按钮Out -->
+	<bitmapdata class="res_normalButtonOut_lt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_lt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_t" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_t.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_rt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_rt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_l" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_l.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_c" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_c.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_r" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_r.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_lb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_lb.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_b" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_b.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOut_rb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOut_rb.png" compression="true"/>
+	
+	<!-- Normal按钮Out -->
+	<bitmapdata class="res_normalButtonOver_lt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_lt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_t" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_t.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_rt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_rt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_l" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_l.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_c" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_c.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_r" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_r.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_lb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_lb.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_b" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_b.png" compression="true"/>
+	<bitmapdata class="res_normalButtonOver_rb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonOver_rb.png" compression="true"/>
+	
+	<!-- Normal按钮Out -->
+	<bitmapdata class="res_normalButtonDown_lt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_lt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_t" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_t.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_rt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_rt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_l" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_l.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_c" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_c.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_r" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_r.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_lb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_lb.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_b" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_b.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDown_rb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDown_rb.png" compression="true"/>
+	
+	<!-- Normal按钮Out -->
+	<bitmapdata class="res_normalButtonDisabled_lt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_lt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_t" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_t.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_rt" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_rt.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_l" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_l.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_c" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_c.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_r" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_r.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_lb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_lb.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_b" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_b.png" compression="true"/>
+	<bitmapdata class="res_normalButtonDisabled_rb" file="J:\work\xianyuan\trunk_new\src\client\xyXmlUi\bin\normalButtonDisabled_rb.png" compression="true"/>
+</lib>

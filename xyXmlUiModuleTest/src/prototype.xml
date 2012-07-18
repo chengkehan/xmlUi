@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prototypes>
+	<!-- 文本框 -->
+	<prototype id="proto_textField" type="com.yheng.xianyuan.xyComponent.core.XYTextField">
+		<set name="x" type="property"/>
+		<set name="y" type="property"/>
+		<set name="text" type="property"/>
+		<set name="textColor" type="property"/>
+		<set name="stroke" type="property"/>
+		<set name="strokeColor" type="property"/>
+		<set name="selectable" type="property"/>
+		<set name="fontSize" type="property"/>
+	</prototype>
+
+	<!-- 按钮 -->
+	<prototype id="proto_button" type="com.yheng.xianyuan.xyComponent.control.Button">
+		<set name="x" type="property"/>
+		<set name="y" type="property"/>
+		<set name="width" type="property"/>
+		<set name="height" type="property"/>
+		<set name="label" type="property"/>
+		<set name="fontSize" type="property"/>
+		<set name="labelColor" type="property"/>
+		<set name="labelStroke" type="property"/>
+		<set name="labelStrokeColor" type="property"/>
+		<set name="enabled" type="property"/>
+		<set name="setOutSkin" type="method"/>
+		<set name="setOverSkin" type="method"/>
+		<set name="setDownSkin" type="method"/>
+		<set name="setDisabledSkin" type="method"/>
+	</prototype>
+	
+	<!-- 九宫格显示对象 -->
+	<prototype id="proto_scale9GridObj" type="com.yheng.xianyuan.xyComponent.control.Scale9GridDisplayObject">
+		<set name="x" type="property"/>
+		<set name="y" type="property"/>
+		<set name="width" type="property"/>
+		<set name="height" type="property"/>
+		<set name="topSize" type="property"/>
+		<set name="bottomSize" type="property"/>
+		<set name="leftSize" type="property"/>
+		<set name="rightSize" type="property"/>
+		<set name="setTopLeft" type="method"/>
+		<set name="setTop" type="method"/>
+		<set name="setTopRight" type="method"/>
+		<set name="setLeft" type="method"/>
+		<set name="setCenter" type="method"/>
+		<set name="setRight" type="method"/>
+		<set name="setBottomLeft" type="method"/>
+		<set name="setBottom" type="method"/>
+		<set name="setBottomRight" type="method"/>
+	</prototype>
+	
+	<!-- 位图 -->
+	<prototype id="proto_bmp" type="com.yheng.xianyuan.xyComponent.core.XYBitmap">
+		<set name="bitmapData" type="property"/>
+	</prototype>
+</prototypes>

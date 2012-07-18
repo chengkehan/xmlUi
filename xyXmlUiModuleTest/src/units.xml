@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<units>
+	<!-- Normal按钮Out -->
+	<unit id="unit_normalButtonOut_lt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_lt"/>
+	</unit>
+	<unit id="unit_normalButtonOut_t" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_t"/>
+	</unit>
+	<unit id="unit_normalButtonOut_rt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_rt"/>
+	</unit>
+	<unit id="unit_normalButtonOut_l" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_l"/>
+	</unit>
+	<unit id="unit_normalButtonOut_c" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_c"/>
+	</unit>
+	<unit id="unit_normalButtonOut_r" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_r"/>
+	</unit>
+	<unit id="unit_normalButtonOut_lb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_lb"/>
+	</unit>
+	<unit id="unit_normalButtonOut_b" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_b"/>
+	</unit>
+	<unit id="unit_normalButtonOut_rb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOut_rb"/>
+	</unit>
+	<unit id="unit_normalButtonOut" prototype="proto_scale9GridObj">
+		<set name="topSize" value="9"/>
+		<set name="bottomSize" value="12"/>
+		<set name="leftSize" value="21"/>
+		<set name="rightSize" value="21"/>
+		<set name="setTopLeft" unit="unit_normalButtonOut_lt"/>
+		<set name="setTop" unit="unit_normalButtonOut_t"/>
+		<set name="setTopRight" unit="unit_normalButtonOut_rt"/>
+		<set name="setLeft" unit="unit_normalButtonOut_l"/>
+		<set name="setCenter" unit="unit_normalButtonOut_c"/>
+		<set name="setRight" unit="unit_normalButtonOut_r"/>
+		<set name="setBottomLeft" unit="unit_normalButtonOut_lb"/>
+		<set name="setBottom" unit="unit_normalButtonOut_b"/>
+		<set name="setBottomRight" unit="unit_normalButtonOut_rb"/>
+	</unit>
+	
+	<!-- Normal按钮Over -->
+	<unit id="unit_normalButtonOver_lt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_lt"/>
+	</unit>
+	<unit id="unit_normalButtonOver_t" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_t"/>
+	</unit>
+	<unit id="unit_normalButtonOver_rt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_rt"/>
+	</unit>
+	<unit id="unit_normalButtonOver_l" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_l"/>
+	</unit>
+	<unit id="unit_normalButtonOver_c" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_c"/>
+	</unit>
+	<unit id="unit_normalButtonOver_r" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_r"/>
+	</unit>
+	<unit id="unit_normalButtonOver_lb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_lb"/>
+	</unit>
+	<unit id="unit_normalButtonOver_b" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_b"/>
+	</unit>
+	<unit id="unit_normalButtonOver_rb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonOver_rb"/>
+	</unit>
+	<unit id="unit_normalButtonOver" prototype="proto_scale9GridObj">
+		<set name="topSize" value="9"/>
+		<set name="bottomSize" value="12"/>
+		<set name="leftSize" value="21"/>
+		<set name="rightSize" value="21"/>
+		<set name="setTopLeft" unit="unit_normalButtonOver_lt"/>
+		<set name="setTop" unit="unit_normalButtonOver_t"/>
+		<set name="setTopRight" unit="unit_normalButtonOver_rt"/>
+		<set name="setLeft" unit="unit_normalButtonOver_l"/>
+		<set name="setCenter" unit="unit_normalButtonOver_c"/>
+		<set name="setRight" unit="unit_normalButtonOver_r"/>
+		<set name="setBottomLeft" unit="unit_normalButtonOver_lb"/>
+		<set name="setBottom" unit="unit_normalButtonOver_b"/>
+		<set name="setBottomRight" unit="unit_normalButtonOver_rb"/>
+	</unit>
+	
+	<!-- Normal按钮Down -->
+	<unit id="unit_normalButtonDown_lt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_lt"/>
+	</unit>
+	<unit id="unit_normalButtonDown_t" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_t"/>
+	</unit>
+	<unit id="unit_normalButtonDown_rt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_rt"/>
+	</unit>
+	<unit id="unit_normalButtonDown_l" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_l"/>
+	</unit>
+	<unit id="unit_normalButtonDown_c" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_c"/>
+	</unit>
+	<unit id="unit_normalButtonDown_r" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_r"/>
+	</unit>
+	<unit id="unit_normalButtonDown_lb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_lb"/>
+	</unit>
+	<unit id="unit_normalButtonDown_b" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_b"/>
+	</unit>
+	<unit id="unit_normalButtonDown_rb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDown_rb"/>
+	</unit>
+	<unit id="unit_normalButtonDown" prototype="proto_scale9GridObj">
+		<set name="topSize" value="9"/>
+		<set name="bottomSize" value="12"/>
+		<set name="leftSize" value="21"/>
+		<set name="rightSize" value="21"/>
+		<set name="setTopLeft" unit="unit_normalButtonDown_lt"/>
+		<set name="setTop" unit="unit_normalButtonDown_t"/>
+		<set name="setTopRight" unit="unit_normalButtonDown_rt"/>
+		<set name="setLeft" unit="unit_normalButtonDown_l"/>
+		<set name="setCenter" unit="unit_normalButtonDown_c"/>
+		<set name="setRight" unit="unit_normalButtonDown_r"/>
+		<set name="setBottomLeft" unit="unit_normalButtonDown_lb"/>
+		<set name="setBottom" unit="unit_normalButtonDown_b"/>
+		<set name="setBottomRight" unit="unit_normalButtonDown_rb"/>
+	</unit>
+	
+	<!-- Normal按钮Disabled -->
+	<unit id="unit_normalButtonDisabled_lt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_lt"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_t" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_t"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_rt" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_rt"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_l" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_l"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_c" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_c"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_r" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_r"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_lb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_lb"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_b" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_b"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled_rb" prototype="proto_bmp">
+		<set name="bitmapData" res="res_normalButtonDisabled_rb"/>
+	</unit>
+	<unit id="unit_normalButtonDisabled" prototype="proto_scale9GridObj">
+		<set name="topSize" value="9"/>
+		<set name="bottomSize" value="12"/>
+		<set name="leftSize" value="21"/>
+		<set name="rightSize" value="21"/>
+		<set name="setTopLeft" unit="unit_normalButtonDisabled_lt"/>
+		<set name="setTop" unit="unit_normalButtonDisabled_t"/>
+		<set name="setTopRight" unit="unit_normalButtonDisabled_rt"/>
+		<set name="setLeft" unit="unit_normalButtonDisabled_l"/>
+		<set name="setCenter" unit="unit_normalButtonDisabled_c"/>
+		<set name="setRight" unit="unit_normalButtonDisabled_r"/>
+		<set name="setBottomLeft" unit="unit_normalButtonDisabled_lb"/>
+		<set name="setBottom" unit="unit_normalButtonDisabled_b"/>
+		<set name="setBottomRight" unit="unit_normalButtonDisabled_rb"/>
+	</unit>
+	
+	<!-- Normal按钮 -->
+	<unit id="unit_normalButton" prototype="proto_button">
+		<set name="setOutSkin" unit="unit_normalButtonOut"/>
+		<set name="setOverSkin" unit="unit_normalButtonOver"/>
+		<set name="setDownSkin" unit="unit_normalButtonDown"/>
+		<set name="setDisabledSkin" unit="unit_normalButtonDisabled"/>
+		<set name="width" value="100"/>
+		<set name="height" value="26"/>
+		<set name="labelColor" value="0xFFFFFF"/>
+		<set name="labelStroke" value="true"/>
+		<set name="labelStrokeColor" value="0x000000"/>
+	</unit>
+	
+	<!-- Label -->
+	<unit id="unit_label" prototype="proto_textField">
+		<set name="selectable" value="false"/>
+		<set name="textColor" value="0xFFFFFF"/>
+		<set name="stroke" value="true"/>
+		<set name="strokeColor" value="0x000000"/>
+		<set name="text" value="标签"/>
+	</unit>
+</units>

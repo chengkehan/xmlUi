@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					   xmlns:s="library://ns.adobe.com/flex/spark" 
+					   xmlns:mx="library://ns.adobe.com/flex/mx" 
+					   showStatusBar="false" width="800" height="600" addedToStage="addToStageHandler(event)">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+			import com.yheng.xianyuan.xyXmlUiModule.XyXmlUiModule;
+			
+			import mx.controls.Alert;
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			
+			private static const RESOURCES:String = "resources.swf";
+			
+			private static const PROTOTYPE:String = "prototype.xml";
+			
+			private static const UNITS:String = "units.xml";
+			
+			private static const UI:String = "ui.xml"
+			
+			private var _resourcesLoader:Loader = null;
+			private var _resourcesDate:Date = null;
+			
+			private var _prototypeXML:XML = null;
+			private var _prototypeDate:Date = null;
+			
+			private var _unitsXML:XML = null;
+			private var _unitsDate:Date = null;
+			
+			private var _uiXML:XML = null;
+			private var _uiDate:Date = null;
+			
+			private var _ui:XyXmlUiModule = null;
+			
+			private var _alertShown:Boolean = false;
+			
+			private var _timer:Timer = null;
+			
+			private var _changed:Boolean = false;
+			
+			private function addToStageHandler(event:Event):void
+			{
+				_timer = new Timer(1000);
+				_timer.addEventListener(TimerEvent.TIMER, timerHandler);
+				_timer.start();
+			}
+			
+			private function timerHandler(event:TimerEvent):void
+			{
+				refresh();
+			}
+			
+			private function refresh():void
+			{
+				_changed = false;
+				readResources();
+			}
+			
+			private function readResources():void
+			{
+				var file:File = getFile(RESOURCES);
+				if(file.exists)
+				{
+					if(dateEqual(_resourcesDate, file.modificationDate))
+					{
+						resCompleteHandler(null);
+						return;
+					}
+					else
+					{
+						_resourcesDate = file.modificationDate;
+					}
+				}
+				
+				_changed = true;
+				
+				if(_resourcesLoader == null)
+				{
+					_resourcesLoader = new Loader();
+					_resourcesLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, resCompleteHandler);
+					_resourcesLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, resIOErrorHandler);
+				}
+				var resLoaderContext:LoaderContext = new LoaderContext(false, ApplicationDomain.currentDomain);
+				resLoaderContext.allowCodeImport = true;
+				_resourcesLoader.load(new URLRequest(file.nativePath), resLoaderContext);
+			}
+			
+			private function resIOErrorHandler(event:IOErrorEvent):void
+			{
+				showAlert(event.text, "res io error");
+			}
+			
+			private function resCompleteHandler(event:Event):void
+			{
+				if(checkModifyBeforeRead(_prototypeXML, _prototypeDate, PROTOTYPE))
+				{
+					_changed = true;
+					_prototypeDate = getFileModifyDate(PROTOTYPE);
+					_prototypeXML = read(PROTOTYPE);
+				}
+				if(checkModifyBeforeRead(_unitsXML, _unitsDate, UNITS))
+				{
+					_changed = true;
+					_unitsDate = getFileModifyDate(UNITS);
+					_unitsXML = read(UNITS);
+				}
+				if(checkModifyBeforeRead(_uiXML, _uiDate, UI))
+				{
+					_changed = true;
+					_uiDate = getFileModifyDate(UI);
+					_uiXML = read(UI);
+				}
+				
+				if(_changed && _prototypeXML != null && _unitsXML != null && _uiXML != null)
+				{
+					try
+					{
+						if(_ui != null)
+						{
+							if(_ui.parent == container)
+							{
+								container.removeChild(_ui);
+							}
+							_ui = null;
+						}
+						
+						XyXmlUiModule.initialize(_prototypeXML, _unitsXML, _resourcesLoader.contentLoaderInfo.applicationDomain, ApplicationDomain.currentDomain);
+						_ui = new XyXmlUiModule(_uiXML);
+						container.addChild(_ui);
+					} 
+					catch(error:Error) 
+					{
+						showAlert(error.message, RESOURCES);
+					}
+				}
+			}
+			
+			private function read(name:String):XML
+			{
+				var stream:FileStream = null;
+				try
+				{
+					var file:File = getFile(name);
+					stream = new FileStream();
+					stream.open(file, FileMode.READ);
+					
+					return new XML(stream.readUTFBytes(stream.bytesAvailable));
+				} 
+				catch(error:Error) 
+				{
+					showAlert(error.message, name);
+					return null;
+				}
+				finally
+				{
+					if(stream != null)
+					{
+						stream.close();
+					}
+				}
+				
+				return null;
+			}
+			
+			private function getFileModifyDate(name:String):Date
+			{
+				var file:File = getFile(name);
+				if(file.exists)
+				{
+					return file.modificationDate;
+				}
+				else
+				{
+					return null;
+				}
+			}
+			
+			private function checkModifyBeforeRead(xml:XML, date:Date, name:String):Boolean
+			{
+				if(xml == null)
+				{
+					return true;
+				}
+				
+				if(date == null)
+				{
+					return true;
+				}
+				
+				var file:File = getFile(name);
+				if(!file.exists)
+				{
+					return true;
+				}
+				if(dateEqual(date, file.modificationDate))
+				{
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			
+			private function alertCloseHandler(event:CloseEvent):void
+			{
+				_alertShown = false;
+			}
+			
+			private function showAlert(text:String, title:String):void
+			{
+				if(!_alertShown)
+				{
+					_alertShown = true;
+					Alert.show(text, title, Alert.OK, null, alertCloseHandler);
+				}
+			}
+			
+			private function dateEqual(date1:Date, date2:Date):Boolean
+			{
+				if(date1 == null || date2 == null)
+				{
+					return false;
+				}
+				else
+				{
+					return date1.fullYear == date2.fullYear && date1.month == date2.month && date1.date == date2.date && 
+						date1.hours == date2.hours && date1.minutes == date2.minutes && date1.seconds == date2.seconds;
+				}
+			}
+			
+			private function getFile(name:String):File
+			{
+				return File.applicationDirectory.resolvePath(name);
+			}
+		]]>
+	</fx:Script>
+	<mx:UIComponent id="container" width="100%" height="100%"/>
+</s:WindowedApplication>

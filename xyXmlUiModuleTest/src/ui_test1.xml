@@ -1,0 +1,13 @@
+<ui>
+	<item id="btn" unit="unit_normalButton">
+		<set name="label" value="一个按钮"/>
+		<set name="x" value="40"/>
+		<set name="y" value="20"/>
+	</item>
+	<item id="label" unit="unit_label">
+		<set name="text" value="火攻："/>
+		<set name="strokeColor" value="0xFF0000"/>
+		<set name="textColor" value="0xBB0000"/>
+		<set name="fontSize" value="16"/>
+	</item>
+</ui>

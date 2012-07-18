@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.XyXmlUiModule"/>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.UnitsManager"/>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.Prototype"/>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.PrototypeSet"/>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.Unit"/>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.UnitSet"/>
+    <classEntry path="com.yheng.xianyuan.xyXmlUiModule.Resource"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
