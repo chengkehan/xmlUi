@@ -28,6 +28,7 @@
 		<set name="setOverSkin" type="method"/>
 		<set name="setDownSkin" type="method"/>
 		<set name="setDisabledSkin" type="method"/>
+		<set name="getLabel().textColor" type="complex"/>
 	</prototype>
 	
 	<!-- 九宫格显示对象 -->

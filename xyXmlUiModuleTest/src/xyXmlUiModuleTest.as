@@ -2,6 +2,7 @@ package
 {
 	import com.yheng.xianyuan.xyComponent.control.Button;
 	import com.yheng.xianyuan.xyComponent.control.Scale9GridDisplayObject;
+	import com.yheng.xianyuan.xyComponent.core.XYComponent;
 	import com.yheng.xianyuan.xyXmlUiModule.XyXmlUiModule;
 	
 	import flash.display.Loader;
@@ -45,6 +46,7 @@ package
 			var uiBytes:ByteArray = new UI_Test1_Data();
 			var uiXML:XML = new XML(uiBytes.readUTFBytes(uiBytes.bytesAvailable));
 			
+			XYComponent.initialize(this);
 			var ui:UI_Test1 = new UI_Test1(uiXML);
 			addChild(ui);
 		}

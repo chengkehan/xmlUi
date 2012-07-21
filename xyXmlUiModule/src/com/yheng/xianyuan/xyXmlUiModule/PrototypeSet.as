@@ -8,6 +8,8 @@ package com.yheng.xianyuan.xyXmlUiModule
 		
 		public static const METHOD:String = "method";
 		
+		public static const COMPLEX:String = "complex";
+		
 		private var _name:String = null;
 		
 		private var _type:String = null;

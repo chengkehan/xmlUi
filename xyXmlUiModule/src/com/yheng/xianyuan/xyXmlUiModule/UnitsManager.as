@@ -214,6 +214,37 @@ package com.yheng.xianyuan.xyXmlUiModule
 			{
 				unit[setName] = targetNew;
 			}
+			else if(setType == PrototypeSet.COMPLEX)
+			{
+				var setNameBlocks:Array = setName.split(".");
+				var setNameBlocksLength:int = setNameBlocks.length;
+				for (var i:int = 0; i < setNameBlocksLength; i++) 
+				{
+					var setNameBlock:String = setNameBlocks[i];
+					if(i == setNameBlocksLength - 1)
+					{
+						if(setNameBlock.indexOf("()") == -1)
+						{
+							unit[setNameBlock] = targetNew;
+						}
+						else
+						{
+							unit[setNameBlock.substring(0, setNameBlock.length - 2)](targetNew);
+						}
+					}
+					else
+					{
+						if(setNameBlock.indexOf("()") == -1)
+						{
+							unit = unit[setNameBlock];
+						}
+						else
+						{
+							unit = unit[setNameBlock.substring(0, setNameBlock.length - 2)]();
+						}
+					}
+				}
+			}
 			else
 			{
 				throw new IllegalParameterException("Illegal propertySetType \"" + setType + "\"");

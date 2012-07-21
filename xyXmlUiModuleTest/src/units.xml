@@ -186,7 +186,8 @@
 		<set name="height" value="26"/>
 		<set name="labelColor" value="0xFFFFFF"/>
 		<set name="labelStroke" value="true"/>
-		<set name="labelStrokeColor" value="0x000000"/>
+		<set name="labelStrokeColor" value="0x444444"/>
+		<set name="getLabel().textColor" value="0x0099FF"/>
 	</unit>
 	
 	<!-- Label -->
