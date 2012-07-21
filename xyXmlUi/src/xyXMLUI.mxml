@@ -12,7 +12,8 @@
 			
 			import mx.controls.Alert;
 			import mx.events.CloseEvent;
-			import mx.events.FlexEvent;
+			
+			private static const COMPONENTS:String = "components.swf";
 			
 			private static const RESOURCES:String = "resources.swf";
 			
@@ -22,6 +23,10 @@
 			
 			private static const UI:String = "ui.xml"
 			
+			private var _componentsURLLoader:URLLoader = null;
+			private var _componentsLoader:Loader = null;
+			private var _componentsDate:Date = null;
+				
 			private var _resourcesLoader:Loader = null;
 			private var _resourcesDate:Date = null;
 			
@@ -57,7 +62,62 @@
 			private function refresh():void
 			{
 				_changed = false;
+				loadComponents();
+			}
+			
+			private function loadComponents():void
+			{
+				var file:File = getFile(COMPONENTS);
+				if(file.exists)
+				{
+					if(dateEqual(_componentsDate, file.modificationDate))
+					{
+						componentsCompleteHandler(null);
+						return;
+					}
+					else
+					{
+						_componentsDate = file.modificationDate;
+					}
+				}
+				
+				if(_componentsURLLoader == null)
+				{
+					_componentsURLLoader = new URLLoader();
+					_componentsURLLoader.addEventListener(Event.COMPLETE, componentsBytesCompleteHandler);
+					_componentsURLLoader.addEventListener(IOErrorEvent.IO_ERROR, componentsBytesIOErrorHandler);
+					_componentsURLLoader.dataFormat = URLLoaderDataFormat.BINARY;
+				}
+				_componentsURLLoader.load(new URLRequest(file.nativePath));
+			}
+			
+			private function componentsBytesCompleteHandler(event:Event):void
+			{
+				var file:File = getFile(COMPONENTS);
+				if(_componentsLoader == null)
+				{
+					_componentsLoader = new Loader();
+					_componentsLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, componentsCompleteHandler);
+					_componentsLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, componentsIOErrorHandler);
+				}
+				var context:LoaderContext = new LoaderContext(false, new ApplicationDomain());
+				context.allowCodeImport = true;
+				_componentsLoader.loadBytes(_componentsURLLoader.data, context);
+			}
+			
+			private function componentsBytesIOErrorHandler(event:IOErrorEvent):void
+			{
+				showAlert(event.text, "components bytes io error");
+			}
+			
+			private function componentsCompleteHandler(event:Event):void
+			{
 				readResources();
+			}
+			
+			private function componentsIOErrorHandler(event:IOErrorEvent):void
+			{
+				showAlert(event.text, "components io error");
 			}
 			
 			private function readResources():void
@@ -84,7 +144,7 @@
 					_resourcesLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, resCompleteHandler);
 					_resourcesLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, resIOErrorHandler);
 				}
-				var resLoaderContext:LoaderContext = new LoaderContext(false, ApplicationDomain.currentDomain);
+				var resLoaderContext:LoaderContext = new LoaderContext(false, new ApplicationDomain());
 				resLoaderContext.allowCodeImport = true;
 				_resourcesLoader.load(new URLRequest(file.nativePath), resLoaderContext);
 			}
@@ -128,7 +188,7 @@
 							_ui = null;
 						}
 						
-						XyXmlUiModule.initialize(_prototypeXML, _unitsXML, _resourcesLoader.contentLoaderInfo.applicationDomain, ApplicationDomain.currentDomain);
+						XyXmlUiModule.initialize(_prototypeXML, _unitsXML, _resourcesLoader.contentLoaderInfo.applicationDomain, _componentsLoader.contentLoaderInfo.applicationDomain);
 						_ui = new XyXmlUiModule(_uiXML);
 						container.addChild(_ui);
 					} 
@@ -237,6 +297,7 @@
 			{
 				return File.applicationDirectory.resolvePath(name);
 			}
+			
 		]]>
 	</fx:Script>
 	<mx:UIComponent id="container" width="100%" height="100%"/>
